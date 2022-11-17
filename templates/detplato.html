@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block contenido %}
+<div class="container" style="margin-bottom: 128px;">
+<!-- <table id="table" border="1">  -->
+<table class="striped">
+  <thead>
+      <tr> 
+        <th width="2">Id</th> 
+        <th width="2">Nombre</th> 
+        <th width="2">Descripcion</th> 
+        <th width="2">Valor</th> 
+        <th width="2">Imagen</th>         
+        <th width="2">Cantidad</th>        
+        <!-- <td width="1">Fecha</td>          -->
+      </tr> 
+    </thead>
+    <tbody>
+      {% for plato in detplato %}
+      <tr>
+        <td width="2">{% print(plato[0]) %}</td> 
+        <td width="2">{% print(plato[1]) %}</td> 
+        <td width="2">{% print(plato[2]) %}</td>  
+        <td width="2">{% print(plato[3]) %}</td>
+        <td width="2"><a class="carousel-item"><img src="{{ url_for('static', filename='images/Picada_Familiar.jpg') }}" width="60" height="60"></a></td>
+        <td width="2"><input id="number" type="number" value="0" min="0" max="50"></td>
+        <!-- <td width="1"><input type="date"> </td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

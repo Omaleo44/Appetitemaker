@@ -1,0 +1,14 @@
+py -m venv env
+env\Scripts\activate
+AppetiteMaker
+pip install flask
+pip install validate_email
+pip install yagmail[all]
+pip install flask-wtf
+pip install werkzeug
+set FLASK_APP=app.py
+set FLASK_ENV=development
+flask run
+
+
+Al crear una cuenta, aceptas nuestras Condiciones de Uso y has Leido y comprendido la Politica de Privacidad

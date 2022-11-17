@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block contenido %}
+<table id="tabel" border="1"> 
+    <tbody>
+      <tr> 
+        <td width="2">Nombre</td> 
+        <td width="2">Descripcion</td> 
+        <td width="2">Precio</td> 
+        <td width="2">Imagen</td>         
+      </tr> 
+      {% for plato in resplatos %}
+      <tr>
+        <td width="2">{% print(plato[1]) %}</td> 
+        <td width="2">{% print(plato[2]) %}</td> 
+        <td width="2">{% print(plato[3]) %}</td> 
+        <td width="2">{% print(plato[4]) %}</td> 
+      </tr>
+      {% endfor %}
+    </tbody>
+<!-- <div class="container">
+            <div class="row">
+                <div class="col s12"><br></div>
+                <div class="col s12">
+                    <div class="field" id="busqueda">
+                        <h3>
+                        Resultado de la Busqueda  <strong>{{ palabra }}</strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">        
+            <div class="section">
+                <h3>Platos Encontrados</h3>
+            </div>
+                <div class="divider"></div>
+            <br>
+        </div>
+        <div class="section">
+            <div class="row">   
+                <div class="col s12">
+                    <div class="col s12 m12 l6 " >
+                        <div class="section" href="/nombre_plato" >
+                            <div class="col s12">                            
+                                <div class="card hoverable horizontal">
+                                    <div class="card-image">
+                                        <div class="hide-on-med-and-down">
+                                            <img src="{{ url_for('static', filename='images/pan-horneado-200x200.jpg') }}" >
+                                        </div>
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <div class="section">
+                                                <div class="col s11" >
+                                                    <h5><b>Pan horneado</b></h5>
+                                                </div>
+                                                <div class="col s1">
+                                                    <i class="zmdi zmdi-favorite zmdi-hc-2x"></i> 
+                                                </div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12">Una pequeña descripción</div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12 m12 "><h5>$99.999</h5></div>
+                                                <div class="col s12 m12 ">
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6 " >
+                        <div class="section" href="/nombre_plato" >
+                            <div class="col s12">                            
+                                <div class="card hoverable horizontal">
+                                    <div class="card-image">
+                                        <div class="hide-on-med-and-down">
+                                            <img src="{{ url_for('static', filename='images/pan-horneado-200x200.jpg') }}" >
+                                        </div>
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <div class="section">
+                                                <div class="col s11" >
+                                                    <h5><b>Pan horneado</b></h5>
+                                                </div>
+                                                <div class="col s1">
+                                                    <i class="zmdi zmdi-favorite zmdi-hc-2x"></i> 
+                                                </div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12">Una pequeña descripción</div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12 m12 "><h5>$99.999</h5></div>
+                                                <div class="col s12 m12 ">
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star-outline zmdi-hc-2x"></i> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="col s12 m12 l6 " >
+                        <div class="section" href="/nombre_plato" >
+                            <div class="col s12">                            
+                                <div class="card hoverable horizontal">
+                                    <div class="card-image">
+                                        <div class="hide-on-med-and-down">
+                                            <img src="{{ url_for('static', filename='images/pan-horneado-200x200.jpg') }}" >
+                                        </div>
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <div class="section">
+                                                <div class="col s11" >
+                                                    <h5><b>Pan horneado</b></h5>
+                                                </div>
+                                                <div class="col s1">
+                                                    <i class="zmdi zmdi-favorite zmdi-hc-2x"></i> 
+                                                </div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12">Una pequeña descripción</div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12 m12 "><h5>$99.999</h5></div>
+                                                <div class="col s12 m12 ">
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star-half zmdi-hc-2x"></i> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6 " >
+                        <div class="section" href="/nombre_plato" >
+                            <div class="col s12">                            
+                                <div class="card hoverable horizontal">
+                                    <div class="card-image">
+                                        <div class="hide-on-med-and-down">
+                                            <img src="{{ url_for('static', filename='images/pan-horneado-200x200.jpg') }}" >
+                                        </div>
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <div class="section">
+                                                <div class="col s11" >
+                                                    <h5><b>Pan horneado</b></h5>
+                                                </div>
+                                                <div class="col s1">
+                                                    <i class="zmdi zmdi-favorite zmdi-hc-2x"></i> 
+                                                </div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12">Pan hecho en el horno :D</div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12 m12 "><h5>$99.999</h5></div>
+                                                <div class="col s12 m12 ">
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star zmdi-hc-2x"></i> 
+                                                    <i class="zmdi zmdi-star-half zmdi-hc-2x"></i> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+{% endblock %}

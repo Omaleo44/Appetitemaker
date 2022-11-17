@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block contenido %}
+<!-- <h1>Contáctenos</h1> -->
+<form action="/detplato" method="post">
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.busqueda(size=30) }}<br />
+  </p>
+  <p>{{ form.enviar(class_="waves-effect waves-light btn") }}</p>
+</form>
+        <div class="section">
+            <div class="row">   
+                {% for m in menu %}
+                    <div class="col s12 m12 l6 " >
+                        <div class="section"> <!--????????????????????????????-->
+                            <div class="col s12">                            
+                                <div class="card hoverable horizontal" " >
+                                    <div class="card-image">
+                                        <div class="hide-on-med-and-down">
+                                            <img src="{{ url_for('static', filename='images/Picada_Familiar.jpg') }}" >
+                                        </div>
+                                    </div>
+                                    <div class="card-stacked">
+                                        <div class="card-content">
+                                            <div class="section">
+                                                <div class="col s11" >                                                    
+                                                    <h5><b><a href="/plato/{{ m[0] }}"">{% print(m[1]) %}</a></b></h5>
+                                                </div>
+                                                <div class="col s1">
+                                                    <i class="zmdi zmdi-favorite zmdi-hc-2x"></i> 
+                                                </div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12">{% print(m[2]) %}</div>
+                                                <div class="col s12"><br></div>
+                                                <div class="col s12 "><h5>$ {% print('{:,.2f}'.format(m[3])) %}</h5></div> <br>
+                                                
+                                                
+                                                <div class="col s8 ">
+                                                    {% for i in range((m[5]/2)|int) %}
+                                                    <i class="zmdi zmdi-star zmdi-hc-1x"></i> 
+                                                    {% endfor %}
+                                                    {% if m[5] - ((m[5]/2)|int)*2 == 1 %}
+                                                        <i class="zmdi zmdi-star-half zmdi-hc-1x"></i> 
+                                                    {% endif %}
+                                                    {% for i in range(((10-m[5])/2)|int) %}
+                                                        <i class="zmdi zmdi-star-outline zmdi-hc-1x"></i> 
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="col s4">
+                                                    <a href="/edit_plato/{{ m[0] }}" style="margin:15px"><i class="zmdi zmdi-edit zmdi-hc-lg"></i></a>
+                                                    <a href="/delete/{{ m[0] }}"><i class="zmdi zmdi-delete zmdi-hc-lg"></i></a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>
+                    </div>  
+                {% endfor %}             
+            </div>
+        </div>
+{% endblock %}

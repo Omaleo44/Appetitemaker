@@ -1,0 +1,157 @@
+<!-- 
+* Copyright 2016 Carlos Eduardo Alfaro Orellana
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<!--meta name="viewport" content="width=device-width, initial-scale=1.0"/-->
+	<title>Home</title>
+    
+     <!-- Normalize CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+    
+     <!-- Materialize CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"/>
+    
+     <!-- Material Design Iconic Font CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/material-design-iconic-font.min.css') }}"/>
+    
+    <!-- Malihu jQuery custom content scroller CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.css') }}"/>
+    
+    <!-- Sweet Alert CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sweetalert.css') }}"/>
+    
+    <!-- MaterialDark CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+    <!-- Page content -->
+    <section>
+        <!-- Nav Info -->
+        <div class="ContentPage-Nav full-width">
+            <ul class="full-width" style="background:black !important">
+                <!--li class="btn-MobileMenu ShowHideMenu"><a href="#" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Menu"><i class="zmdi zmdi-more-vert"></i></a></li-->
+                <li style="margin-right:70px"><a href="/login">Login</a></li>
+              
+                <li ><a href="/menu" class="tooltipped waves-effect waves-light " data-tooltip="Consulta nuestro Menu" class="waves-effect waves-light"><i class="zmdi zmdi-view-web zmdi-hc-fw"></i></a></li>
+                <li ><a href="/registro" class="tooltipped waves-effect waves-light " data-tooltip="Registrate" class="waves-effect waves-light"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i></a></li>
+                <li ><a href="/nosotros" class="tooltipped waves-effect waves-light " data-tooltip="Nosotros" class="waves-effect waves-light"><i class="zmdi zmdi-accounts-outline zmdi-hc-fw"></i></a></li>
+                <li ><a href="/contacto" class="tooltipped waves-effect waves-light " data-tooltip="Contactenos" class="waves-effect waves-light"><i class="zmdi zmdi-account-box-mail zmdi-hc-fw"></i></a></li>
+                
+
+                <h3 class="full-width" style="color:#C7C5C7; margin-left:60px">AppetiteMaker</h3>
+            </ul>
+        </div>
+
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="{{ url_for('static', filename='images/Arroz-Montanero.jpg') }}"></a>
+            <a class="carousel-item" href="#two!"><img src="{{ url_for('static', filename='images/Bandeja Paisa Especial.jpg') }}"></a>
+            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a> 
+            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+        </div>
+        <!-- Content -->
+        <div class="row">
+            <h3 align="center">Nuestros productos</h3>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l4">
+                  <div class="card">
+                        <div class="card-image">
+                          <img src="{{ url_for('static', filename='images/Bandeja Paisa Especial.jpg') }}">
+                          <span class="card-title">Bandeja  Especial</span>
+                        </div>
+                        <div class="card-content">
+                          <p>Disfruta de una exquista bandeja Paisa espcial para compartir en familia.</p>
+                        </div>
+                        <div class="card-action">
+                          <p>$39.900</p>
+                        </div>
+                  </div>
+            </div>
+            <div class="col s12 m4 l4">
+                  <div class="card">
+                        <div class="card-image">
+                          <img src="{{ url_for('static', filename='images/Carne  a la llanera.jpg') }}">
+                          <span class="card-title">Carne Personal</span>
+                        </div>
+                        <div class="card-content">
+                          <p>Carne a la llannera  Personal solo para tí, incluye la bebida de tu elección.</p>
+                        </div>
+                        <div class="card-action">
+                          <p>$18.900</p>
+                        </div>
+                  </div>
+            </div>
+            <div class="col s12 m4 l4">
+                  <div class="card">
+                        <div class="card-image">
+                          <img src="{{ url_for('static', filename='images/Super-Picada.jpg') }}">
+                          <span class="card-title">Super Picada</span>
+                        </div>
+                        <div class="card-content">
+                          <p>Para que disfrutes con tu pareja en ese día especial. Dos por uno.</p>
+                        </div>
+                        <div class="card-action">
+                          <p>$28.900</p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+        <div class="row">
+            <h3 align="center">Encuentranos</h3>
+        </div>
+        <div class="row" align="center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.142972456732!2d-76.59701638581019!3d2.4594819576921343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30039d7270d777%3A0xa749ba51fed22c24!2sCampanario%20Centro%20Comercial!5e0!3m2!1ses!2sco!4v1633704617940!5m2!1ses!2sco" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Footer -->   
+        <footer style="background-color:black">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text" style="color:#C7C5C7 !important">Acerca de ApetitteMaker</h5>
+                        <p class="grey-text text-lighten-4" style="color:#C7C5C7 !important">
+                          AppetiteMaker es una empresa dedicada a la comercialización y distribucion de comidas rapidas.
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text" style="color:#C7C5C7 !important">Tecnologías usadas</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="http://materializecss.com/">Materialize</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://zavoloklom.github.io/material-design-iconic-font/icons.html">Material Design Iconic Font</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://t4t5.github.io/sweetalert/">Sweet Alert</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://manos.malihu.gr/jquery-custom-content-scroller/">jQuery custom content scroller</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="NavLateralDivider"></div>
+            <div class="footer-copyright">
+                <div class="container center-align" style="color:#C7C5C7">
+                    © 2022 AppetiteMaker Team
+                </div>
+            </div>
+        </footer>
+    </section>
+    
+    <!-- Sweet Alert JS -->
+    <script src="{{ url_for('static', filename='js/sweetalert.min.js') }}"></script>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-2.2.0.min.js') }}"></script>
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-2.2.0.min.js') }}"><\/script>')</script-->
+    
+    <!-- Materialize JS -->
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    
+    <!-- Malihu jQuery custom content scroller JS -->
+    <script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    
+    <!-- MaterialDark JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

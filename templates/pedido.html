@@ -1,0 +1,36 @@
+ {% extends "base.html" %}
+ {% block contenido %}
+ 
+ <form action="/pedido" method="post">
+    {{ form.hidden_tag() }}
+    <div class="container" style="margin-bottom: 128px;">
+        <div class="row">
+            <h2 class="center-align">Pedido Pretzelmaker</h2>
+            <div class="col s12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-field="Producto">Producto</th>
+                            <th data-field="Cantidad">Cantidad</th>
+                            <th data-field="VlrUnit">Vlr Unit</th>
+                            <th data-field="VlrTotal">Vlr Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for plato in lista_platos %}
+                        <tr>
+                            <td>{% print(plato[0]) %}</td>
+                            <td>{% print(plato[1]) %}</td>
+                            <td>{% print('{:,.2f}'.format(plato[2])) %}</td>
+                            <td>{% print('{:,.2f}'.format(plato[3])) %}</td>
+                        </tr>
+                    {% endfor  %}
+                                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p>{{ form.enviar(class_="waves-effect waves-light btn") }}</p>
+        
+{% endblock %} 

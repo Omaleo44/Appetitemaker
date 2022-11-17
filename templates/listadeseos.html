@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<form action="/pedido" method="post">
+   {{ form.hidden_tag() }}
+   <div class="container" style="margin-bottom: 128px;">
+       <div class="row">
+           <h2 class="center-align">Lista de Deseos AppetiteMaker</h2>
+           <div class="col s12">
+               <table>
+                   <thead>
+                       <tr>
+                           <th data-field="Producto">Producto</th>
+                           <th data-field="Imagen"></th>
+                           <!-- <th data-field="VlrUnit">Vlr Unit</th>
+                           <th data-field="VlrTotal">Vlr Total</th> -->
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Arroz Colombiano</td>
+                           <td><a class="carousel-item"><img src="{{ url_for('static', filename='images/Arroz Colombiano.jpg') }}" width="60" height="60"></a></td>
+                           <!-- <td>$0.87</td>
+                           <td>$0.87</td> -->
+                       </tr>
+                       <tr>
+                           <td>Pollo al Horno</td>
+                           <td><a class="carousel-item"><img src="{{ url_for('static', filename='images/pollo al horno.jpg') }}" width="60" height="60"></a></td>
+                           <!-- <td>$3.76</td>
+                           <td>$7.52</td> -->
+                       </tr>
+                       <tr>
+                           <td>Sancocho</td>
+                           <td><a class="carousel-item"><img src="{{ url_for('static', filename='images/Sancocho.jpeg') }}" width="60" height="60"></a></td>
+                           <!-- <td>$7.00</td>
+                           <td>$21.00</td> -->
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           <p>{{ form.enviar(class_="waves-effect waves-light btn") }}</p>
+       </div>
+   </div>
+{% endblock %} 

@@ -1,0 +1,83 @@
+<!-- 
+* 
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>AppetiteMaker</title>
+	     <!-- Normalize CSS -->
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+    
+         <!-- Materialize CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"/>
+        
+         <!-- Material Design Iconic Font CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/material-design-iconic-font.min.css') }}"/>
+        
+        <!-- Malihu jQuery custom content scroller CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.css') }}"/>
+        
+        <!-- Sweet Alert CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sweetalert.css') }}"/>
+        
+        <!-- MaterialDark CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+<!-- Validaciones -->
+<script src="{{ url_for('static', filename='js/validacion.js') }}"></script>
+<!-- Sweet Alert JS -->
+<script src="{{ url_for('static', filename='js/sweetalert.min.js') }}"></script>
+
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery-2.2.0.min.js') }}"></script>
+
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-2.2.0.min.js') }}"><\/script>')</script-->
+
+<!-- Materialize JS -->
+<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+
+<!-- Malihu jQuery custom content scroller JS -->
+<!-- <script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script> -->
+
+<!-- MaterialDark JS -->
+<!-- <script src="{{ url_for('static', filename='js/main.js') }}"></script> -->
+
+</head>
+<body class="font-cover" id="login">
+    <section class="content">
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+      </section>
+    <div class="container-login center-align">
+        <div style="margin:15px 0;">
+            <img src="{{ url_for('static', filename='images/Logo2.png') }}" alt="material-logo" class="responsive-img center-box" width="100" height="100">
+            <p>Inicia sesión con tu cuenta</p>   
+        </div>
+        <form
+        action="{{ url_for('login')}}"
+        method="POST"
+        name="formLogin"
+        onSubmit="validar_Login();"
+        >        
+            <div class="input-field">
+                <input id="username" name="username" type="text">
+                <label for="username"><i class="zmdi zmdi-account"></i>&nbsp; Nombre</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password" name='password' type="password" class="validate">
+                <label for="password"><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña</label>
+            </div>
+            <button type="submit" value="Enviar" class="waves-effect waves-light btn">Enviar</button>
+        </form>
+        <div class="divider" style="margin: 20px 0;"></div>
+        <a href="/registro">Crear cuenta</a>
+        <br>
+        <a href="/">Inicio</a>
+        </div>
+     
+</body>
+</html>

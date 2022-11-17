@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block contenido %}
+ 
+  <div class="container" style="margin-bottom: 128px;">
+      <div class="row">
+          <h2 class="center-align">Lista de usuarios</h2>
+          <div class="col s12">
+              <table class="striped">
+                  <thead>
+                      <tr> 
+                          <th data-field="Id" >ID</th>
+                          <th data-field="usuario">Usuario</th>
+                          <th data-field="nombres">Nombres</th>
+                          <th data-field="apellidos">Apellidos</th>
+                          <th data-field="correo">Correo</th>
+                          <th data-field="identificacion">Identificacion</th>
+                          <th data-field="fechanacimiento">Fecha de nacimiento</th>
+                          <th data-field="celular">Celular</th>
+                          <th data-field="rol">Rol</th>
+                          <th data-field="accion">Accion</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {% for us in usuarios %}
+                    <tr>
+                      <td width="2">{% print(us[0]) %}</td> 
+                      <td width="2"><a href="/usuario/{{ us[0] }}">{% print(us[1]) %}</a></td> 
+                      <td width="2">{% print(us[2]) %}</td>  
+                      <td width="2">{% print(us[3]) %}</td>
+                      <td width="2">{% print(us[4]) %}</td>
+                      <td width="2">{% print(us[5]) %}</td>
+                      <td width="2">{% print(us[6]) %}</td>
+                      <td width="2">{% print(us[7]) %}</td>
+                      <td width="2">{% print(us[8]) %}</td>
+                      <td>
+                        <a href="/usuario/{{ us[0] }}/edit"><i class="zmdi zmdi-edit zmdi-hc-lg"></i></a>
+                        <a href="/usuario/{{ us[0] }}" style="margin:10px"><i class="zmdi zmdi-eye zmdi-hc-lg"></i></a>
+                        <a href="/usuario/{{ us[0] }}/delete"><i class="zmdi zmdi-delete zmdi-hc-lg"></i></a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+          </div>
+          <br>
+          <a href="/usuario/create"><button type="submit" class="waves-effect waves-light btn">Crear Usuario</button></a>
+      </div>
+  </div>
+{% endblock %}

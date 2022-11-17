@@ -1,0 +1,39 @@
+ {% extends "base.html" %}
+ {% block contenido %}
+ <h3 align="center">¿Desea eliminar este usuario?</h3>
+ <form action="" method="post" name="formEliminacion">
+   <div class="col s12">
+   
+       
+       <p>
+       {{ form.nombres.label }}
+       {{ form.nombres(size=30, disabled=false) }}<br />
+       </p>
+       <p>
+       {{ form.apellidos.label }}
+       {{ form.apellidos(size=30, disabled=false) }}<br />
+       </p>
+       <p>
+           {{ form.fechaDeNacimiento.label }}
+           {{ form.fechaDeNacimiento(size=30, disabled=false) }}<br />
+       </p>
+       <p>
+       {{ form.identificacion.label }}
+       {{ form.identificacion(size=20, disabled=false)}}<br />
+       </p>
+       <p>
+           {{ form.correo.label }}
+           {{ form.correo(size=130, disabled=false)}}<br />
+       </p>
+       <p>
+           {{ form.celular.label }}
+           {{ form.celular(size=12, disabled=false)}}<br />
+       </p>
+       <p>
+            {{ form.rol.label }}
+            {{ form.rol(size=1, disabled=false)}}<br />
+        </p>
+
+  <button type="submit" class="waves-effect waves-light btn">Eliminar</button>
+  <a href="/usuario" class="waves-effect waves-teal btn-flat">Cancelar</a>
+{% endblock %}

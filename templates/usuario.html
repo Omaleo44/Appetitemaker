@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block contenido %}
+        <!-- Sección superior (Datos del usuario)-->
+        <div class="container">
+            <div class="section">
+                <div class="row">   
+                    <div class="col s12">
+                        <div class="col s4" >
+                            <br><br>
+                            <center>
+                                <img src="{{ url_for('static', filename='images/userProfile.png') }}" height="200px">  
+                                <br><br>
+
+                                <!--Enlazar con lista de deseo del usuario-->
+                                <a href=/listadeseos><h5><b>Ver lista de deseos</b></h5></a> 
+                            </center>                   
+                        </div> 
+                        <div class="col s8 ">
+                            <div class="section">
+                                <form action="" method="post" name="formEdicion">
+                                    <!-- Agregar enlace con la base de datos y la url -->
+                                    <div class="col s8">
+                                        <h3><b>Hola {{ form.nombres.data }}</b></h3>
+                                    </div>
+
+                                    <!-- Boton editar al ser presionado habilita el cambio de informacion, si es presionado de nuevo actualiza 
+                                        la informacion de la base de datos con la ingresada por el usuario y deshabilita la opción de modificar la información-->
+                                    <div class="col s4">
+                                        <br>
+                                        <button class="btn waves-effect waves-light" type="button" name="action" onclick="deshabilitarCampos(false)" id="editar">Editar 
+                                            <i class="zmdi zmdi-edit zmdi-hc-1x"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Para hacer editable el input es necesario eliminar el atributo readonly desde js 
+                                        Para validar información se puede agregar el class validate que cambia el color del 
+                                        campo de texto
+                                    -->
+                                    <div class="col s8">
+                                    
+                                        
+                                        <p>
+                                        {{ form.nombres.label }}
+                                        {{ form.nombres(size=30) }}<br />
+                                        </p>
+                                        <p>
+                                        {{ form.apellidos.label }}
+                                        {{ form.apellidos(size=30) }}<br />
+                                        </p>
+                                        <p>
+                                            {{ form.fechaDeNacimiento.label }}
+                                            {{ form.fechaDeNacimiento(size=30) }}<br />
+                                        </p>
+                                        <p>
+                                        {{ form.identificacion.label }}
+                                        {{ form.identificacion(size=20)}}<br />
+                                        </p>
+                                        <p>
+                                            {{ form.correo.label }}
+                                            {{ form.correo(size=130)}}<br />
+                                        </p>
+                                        <p>
+                                            {{ form.celular.label }}
+                                            {{ form.celular(size=12)}}<br />
+                                        </p>
+
+                                        <p>
+                                            {{ form.rol.label }}
+                                            {{ form.rol (size=1)}}<br />
+                                        </p>
+
+                                        <button class="btn waves-effect waves-light" type="submit" style="display: none" id="guardarCambios" onsubmit="deshabilitarCampos(true)">Guardar Cambios</button>
+                                        
+                                    </div>
+                                    <div class="col s12">
+                                        
+                                    </div>
+                                    <script>
+                                        function deshabilitarCampos(valor){
+                                            document.getElementById("nombres").disabled = valor
+                                            document.getElementById("apellidos").disabled = valor
+                                            document.getElementById("fechaDeNacimiento").disabled = valor
+                                            document.getElementById("identificacion").disabled = valor
+                                            document.getElementById("correo").disabled = valor
+                                            document.getElementById("celular").disabled = valor
+                                            document.getElementById("rol").disabled = valor
+                                            document.getElementById("editar").disabled = !valor                        
+                                            if (!valor)
+                                                document.getElementById("guardarCambios").style ="display: block"
+                                            else
+                                                document.getElementById("guardarCambios").style = "display: none"
+                                        }
+                                    </script>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row">  
+                    <div class="col s12 m12 l6">
+                            <h4>Comentarios recientes</h4>
+                            <div class="divider"></div>
+                            <ul class="collection">
+                                {% for com in comentario %}
+                                <li class="collection-item">
+                                    <span class="title"><h5> {% print(com[0]) %} </h5> </span>
+                                    <p>
+                                        {% print(com[1]) %}
+                                    <br>
+                                    {% for i in range((com[2]/2)|int) %}
+                                        <i class="zmdi zmdi-star zmdi-hc-1x"></i> 
+                                    {% endfor %}
+                                    {% if com[2] - ((com[2]/2)|int)*2 == 1 %}
+                                        <i class="zmdi zmdi-star-half zmdi-hc-1x"></i> 
+                                    {% endif %}
+                                    {% for i in range(((10-com[2])/2)|int) %}
+                                        <i class="zmdi zmdi-star-outline zmdi-hc-1x"></i> 
+                                    {% endfor %}
+                                    </p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        <br>
+                    </div>
+                    
+                    <div class="col s12 m12 l6">
+                        <h4>Pedidos realizados</h4>                   
+                        <div class="divider"></div>
+                        <ul class="collection">
+                            {% for ped in pedido %}
+                            <li class="collection-item">
+                                <p>
+                                <b>Codigo: {% print(ped[0]) %} </b> <br> 
+                                <b>Platos: </b>{% print(ped[2]) %}  <br>  
+                                <b>Estado: </b>{% print(ped[1]) %}
+                                </p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+ {% extends "base.html" %}
+ {% block contenido %}
+  <h3 align="center">Editar plato</h3>
+  <form action="{{ url_for('edit_plato', id=id) }}" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+      <!--label for="file">Imagen</label>
+      <input type="file" name="file" id="file" required-->
+    <p>
+      {{ form.nombre.label }}<br />
+      {{ form.nombre(size=30) }}<br />
+    </p>
+    <p>
+      {{ form.precio.label }}<br />
+      {{ form.precio() }}<br />
+    </p>
+    <p>
+        {{ form.descripcion.label }}<br />
+        {{ form.descripcion(size=130) }}<br />
+    </p>
+    <p>{{ form.aceptar(class_="waves-effect waves-light btn") }}</p>
+  </form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <div class="col s12 m12 l12">
+            <div class="card horizontal">
+                  <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/Picada_Familiar.jpg') }}">
+                  </div>
+                  <div class="card-stacked">
+                    <div style="margin-left:25px">
+                        <h3>{% print(detplato[1]) %}</h3>
+                        <h5>${% print(detplato[3]) %}</h5>
+                    </div>
+                    <div class="card-content">
+                        <h5>Descripción del plato</h5>
+                        <p>{% print(detplato[2]) %}</p>
+                    </div>
+                    <div class="card-action">
+                        <i class="zmdi zmdi-star zmdi-hc-fw zmdi-hc-2x"></i>
+                        <i class="zmdi zmdi-star zmdi-hc-fw zmdi-hc-2x"></i>
+                        <i class="zmdi zmdi-star zmdi-hc-fw zmdi-hc-2x"></i>
+                        <i class="zmdi zmdi-star-half zmdi-hc-fw zmdi-hc-2x"></i>
+                        <i class="zmdi zmdi-star-outline zmdi-hc-fw zmdi-hc-2x"></i><br><br>
+                        <a href="#">Lista de deseos  <i class="zmdi zmdi-favorite-outline zmdi-hc-lg"></i></a>
+                        <a href="#">Agregar al carrito  <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-lg"></i></a>
+                    </div>
+                  </div>
+            </div>
+            <div>
+                <h4>Comentarios</h4>
+                <hr>
+                <h5>@comelon_2021</h5>
+                <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra velit non ipsum pellentesque volutpat. Nullam sagittis est consequat lorem commodo egestas. Curabitur at convallis ex. Praesent feugiat imperdiet dignissim. Etiam eu augue quis velit consectetur pretium et sit amet orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sed neque a felis sollicitudin vestibulum. In egestas dui non elit sodales, eu commodo mauris feugiat. Morbi dignissim ante et cursus venenatis</p>
+                 <h5>@amcaicedo1</h5>
+                <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra velit non ipsum pellentesque volutpat. Nullam sagittis est consequat lorem commodo egestas. Curabitur at convallis ex. Praesent feugiat imperdiet dignissim. Etiam eu augue quis velit consectetur pretium et sit amet orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sed neque a felis sollicitudin vestibulum. In egestas dui non elit sodales, eu commodo mauris feugiat. Morbi dignissim ante et cursus venenatis</p>
+            </div>
+    </div>
+{% endblock %}

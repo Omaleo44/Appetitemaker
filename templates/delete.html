@@ -1,0 +1,7 @@
+ {% extends "base.html" %}
+ {% block contenido %}
+  <h3>¿Desea eliminar el plato {% print(detplato[1]) %}?</h3>
+  <!--button type="submit" class="waves-effect waves-light btn">Eliminar</button-->
+  <a href="/delete/{% print(detplato[0]) %}/confirm" class="waves-effect waves-light btn">Eliminar</a>
+  <a href="/gestion_platos" class="waves-effect waves-teal btn-flat">Cancelar</a>
+{% endblock %}

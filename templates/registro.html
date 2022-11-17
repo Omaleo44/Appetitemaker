@@ -1,0 +1,56 @@
+ {% extends "base.html" %}
+ {% block contenido %}
+<div class="col s2">
+</div>
+<div class="col s8">
+                                    
+     <form
+        action="{{ url_for('registro')}}"
+        method="POST"
+        name="formRegistro"        
+        >
+      {{ form.hidden_tag() }}
+
+       <p>
+      {{ form.username.label }}
+      {{ form.username(size=30) }}<br />
+      </p>
+       <p>
+      {{ form.password.label }}
+      {{ form.password(size=30) }}<br />
+
+      
+      </p>
+      <p>
+      {{ form.nombres.label }}
+      {{ form.nombres(size=30) }}<br />
+      </p>
+      <p>
+      {{ form.apellidos.label }}
+      {{ form.apellidos(size=30) }}<br />
+      </p>
+      <p>
+          {{ form.fechaDeNacimiento.label }}
+          {{ form.fechaDeNacimiento(size=30) }}<br />
+      </p>
+      <p>
+      {{ form.identificacion.label }}
+      {{ form.identificacion(size=20)}}<br />
+      </p>
+      <p>
+          {{ form.correo.label }}
+          {{ form.correo(size=130)}}<br />
+      </p>
+      <p>
+          {{ form.celular.label }}
+          {{ form.celular(size=12)}}<br />
+      </p>
+      <span>Al crear una cuenta, aceptas nuestras 
+        <a>  Condiciones de Uso </a> y has Leido y comprendido la <a>Politica de Privacidad </a></span>
+      {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %}
+    <p>{{ form.enviar() }}</p>
+  </form>
+</div>
+{% endblock %}
